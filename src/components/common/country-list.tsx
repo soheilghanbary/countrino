@@ -15,7 +15,7 @@ const CountryCard = (c: any) => {
         src={c.flags.png}
         alt={c.name.common}
         draggable={false}
-        className="aspect-auto h-36 w-full rounded-t-[inherit] border border-border/65"
+        className="aspect-auto h-28 w-full rounded-t-[inherit] border border-border/65 md:h-36"
       />
       <div className="p-4">
         <h2 className="font-semibold text-sm/relaxed">{c.name.common}</h2>
@@ -33,7 +33,7 @@ const CountryCard = (c: any) => {
 
 export function CountryList() {
   const [query, _] = useQueryState('search', { defaultValue: '' });
-  const [sort, setSort] = useQueryState('sort', { defaultValue: '' });
+  const [sort] = useQueryState('sort', { defaultValue: '' });
   const { data, isPending } = useCountries(query, sort);
 
   if (isPending) {

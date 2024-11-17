@@ -1,8 +1,8 @@
 export const siteConfig = {
-  title: 'Nix Stack',
-  description: 'The Minimal Next.js Stack',
   hero: {
-    title: 'Welcome to Nix Starter',
-    description: 'The Minimal Next.js Starter',
+    title: 'Explore Countries, Simplified',
+    description:
+      'Discover and explore global country information with simplicity, poweredby Next.js & TailwindCSS.',
+    url: 'https://github.com/soheilghanbary/countrino',
   },
 };

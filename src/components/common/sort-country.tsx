@@ -28,7 +28,7 @@ export function SortCountry() {
       <PopoverTrigger asChild>
         <Button variant="outline" className="flex items-center gap-2">
           <ListFilter className="h-4 w-4" />
-          <span>Sort By Population</span>
+          <span>Sort By</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="flex w-fit flex-col p-2">
@@ -37,7 +37,7 @@ export function SortCountry() {
           variant="ghost"
           onClick={() => handleSort('asc')}
         >
-          Lowest
+          Lowest Population
           <CheckIcon
             className={sort === 'asc' ? 'text-primary' : 'text-transparent'}
           />
@@ -47,7 +47,7 @@ export function SortCountry() {
           variant="ghost"
           onClick={() => handleSort('desc')}
         >
-          Highest
+          Highest Population
           <CheckIcon
             className={sort === 'desc' ? 'text-primary' : 'text-transparent'}
           />

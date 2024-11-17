@@ -17,7 +17,7 @@ export function SearchCountry() {
         className="w-full bg-card pl-9"
         defaultValue={query}
         onChange={(e) => debounced(e.target.value)}
-        placeholder="Search country & city"
+        placeholder="Search country"
       />
       <SearchIcon className="-translate-y-1/2 absolute top-1/2 left-3 size-4 text-muted-foreground" />
     </div>

@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config/site';
 import { GithubIcon } from 'lucide-react';
 import { buttonVariants } from '../ui/button';
 import { Logo } from './logo';
@@ -12,7 +13,7 @@ export function Header() {
           target="_blank"
           rel="noreferrer"
           className={buttonVariants({ variant: 'ghost', size: 'icon' })}
-          href="https://github.com/soheilghanbary/todonext"
+          href={siteConfig.hero.url}
         >
           <GithubIcon />
         </a>

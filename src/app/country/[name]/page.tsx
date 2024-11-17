@@ -1,4 +1,5 @@
 import { BackButton } from '@/components/common/back-button';
+import { ScrollToTop } from '@/components/common/scroll-to-top';
 import { Separator } from '@/components/ui/separator';
 import { Banknote, LanguagesIcon, MapPinHouse, Users2 } from 'lucide-react';
 
@@ -37,6 +38,7 @@ export default async function Page({ params }: { params: { name: string } }) {
 
   return (
     <div className="space-y-4">
+      <ScrollToTop />
       <BackButton />
       <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-4 rounded-lg border bg-card p-4 md:flex-row">
         <img
@@ -45,7 +47,7 @@ export default async function Page({ params }: { params: { name: string } }) {
           className="box-border/40 w-full rounded-lg border md:w-auto"
         />
         <div className="space-y-4 [&_p_span]:font-medium [&_p_span]:text-foreground">
-          <h1 className="font-bold text-2xl">
+          <h1 className="font-bold text-lg md:text-2xl">
             {country.name.common} ({country.name.official})
           </h1>
           <p className="flex items-center gap-2 text-muted-foreground text-sm">
