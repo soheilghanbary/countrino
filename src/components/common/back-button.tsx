@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 export function BackButton() {
   const router = useRouter();
   return (
-    <Button variant={'secondary'} onClick={() => router.back()}>
+    <Button variant={'ghost'} onClick={() => router.back()}>
       <ArrowLeft />
       Back
     </Button>

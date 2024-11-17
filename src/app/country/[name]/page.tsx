@@ -42,18 +42,19 @@ export default async function Page({ params }: { params: { name: string } }) {
         <img
           src={country.flags.png}
           alt={country.name.common}
-          className="w-full rounded-lg md:w-auto"
+          className="box-border/40 w-full rounded-lg border md:w-auto"
         />
-        <div className="space-y-4">
+        <div className="space-y-4 [&_p_span]:font-medium [&_p_span]:text-foreground">
           <h1 className="font-bold text-2xl">
             {country.name.common} ({country.name.official})
           </h1>
           <p className="flex items-center gap-2 text-muted-foreground text-sm">
-            <MapPinHouse className="size-4" /> Capital: {country.capital}
+            <MapPinHouse className="size-4" /> Capital:
+            <span>{country.capital}</span>
           </p>
           <p className="flex items-center gap-2 text-muted-foreground text-sm">
             <LanguagesIcon className="size-4" /> Language:{' '}
-            {languageArray.map((l) => l).join(', ')}
+            <span>{languageArray.map((l) => l).join(', ')}</span>
           </p>
           <p className="flex items-center gap-2 text-muted-foreground text-sm">
             <Banknote className="size-4" /> Currency:{' '}
@@ -65,7 +66,7 @@ export default async function Page({ params }: { params: { name: string } }) {
           </p>
           <p className="flex items-center gap-2 text-muted-foreground text-sm">
             <Users2 className="size-4" /> Population:{' '}
-            {Number(country.population).toLocaleString('en-US')}
+            <span>{Number(country.population).toLocaleString('en-US')}</span>
           </p>
         </div>
       </div>

@@ -9,13 +9,13 @@ export function Hero() {
       </h1>
       <p className="mx-auto max-w-2xl text-balance text-muted-foreground text-sm lg:text-lg">
         Discover and explore global country information with simplicity, powered
-        by Next.js & styled with TailwindCSS.
+        by Next.js & TailwindCSS.
       </p>
       <Button asChild className="mt-4 rounded-full" variant={'outline'}>
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/soheilghanbary/todonext"
+          href="https://github.com/soheilghanbary/countrino"
         >
           <RocketIcon />
           Source Code

@@ -9,7 +9,7 @@ const CountryCard = (c: any) => {
   return (
     <Link
       href={`/country/${c.name.common}`}
-      className="space-y-2 rounded-lg border border-border/65 bg-card"
+      className="rounded-lg border border-border/65 bg-card"
     >
       <img
         src={c.flags.png}
@@ -18,7 +18,7 @@ const CountryCard = (c: any) => {
         className="aspect-auto h-36 w-full rounded-t-[inherit] border border-border/65"
       />
       <div className="p-4">
-        <h2 className="font-semibold text-sm/loose">{c.name.common}</h2>
+        <h2 className="font-semibold text-sm/relaxed">{c.name.common}</h2>
         <p className="line-clamp-1 font-medium text-muted-foreground text-xs/5">
           {c.capital}
         </p>
@@ -51,9 +51,20 @@ export function CountryList() {
     return <p className="py-12 text-center">Country not found 😐</p>;
   }
 
+  // sort data country
+  const sortedData = [...data].sort((a, b) => {
+    if (sort === 'desc') {
+      return b.population - a.population;
+    }
+    if (sort === 'asc') {
+      return a.population - b.population;
+    }
+    return a.name.common.localeCompare(b.name.common);
+  });
+
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
-      {data.map((c, i) => (
+      {sortedData.map((c, i) => (
         <CountryCard key={i} {...c} />
       ))}
     </div>
