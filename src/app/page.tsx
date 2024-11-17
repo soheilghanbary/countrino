@@ -2,8 +2,6 @@ import { CountryList } from '@/components/common/country-list';
 import { Hero } from '@/components/common/hero';
 import { SearchCountry } from '@/components/common/search-country';
 import { SortCountry } from '@/components/common/sort-country';
-import { Button } from '@/components/ui/button';
-import { SortDesc } from 'lucide-react';
 
 export default function Page() {
   return (

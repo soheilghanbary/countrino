@@ -1,20 +1,23 @@
 'use client';
 import { useCountries } from '@/hooks/use-country';
 import { UsersIcon } from 'lucide-react';
+import Link from 'next/link';
 import { useQueryState } from 'nuqs';
-import { Button } from '../ui/button';
 import { LoadingIcon } from './icons';
 
 const CountryCard = (c: any) => {
   return (
-    <div className="space-y-2 rounded-lg border border-border/65 bg-card p-4">
+    <Link
+      href={`/country/${c.name.common}`}
+      className="space-y-2 rounded-lg border border-border/65 bg-card"
+    >
       <img
         src={c.flags.png}
         alt={c.name.common}
         draggable={false}
-        className="aspect-auto h-36 w-full rounded-md border border-border/40"
+        className="aspect-auto h-36 w-full rounded-t-[inherit] border border-border/65"
       />
-      <div>
+      <div className="p-4">
         <h2 className="font-semibold text-sm/loose">{c.name.common}</h2>
         <p className="line-clamp-1 font-medium text-muted-foreground text-xs/5">
           {c.capital}
@@ -23,11 +26,8 @@ const CountryCard = (c: any) => {
           <UsersIcon className="size-3.5" />
           {Number(c.population).toLocaleString()}
         </p>
-        {/* <Button size={'sm'} className="mt-4 w-full">
-          Full Details
-        </Button> */}
       </div>
-    </div>
+    </Link>
   );
 };
 
