@@ -14,10 +14,10 @@ const font = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.title,
-    template: `%s - ${siteConfig.title}`,
+    default: siteConfig.hero.title,
+    template: `%s - ${siteConfig.hero.title}`,
   },
-  description: siteConfig.description,
+  description: siteConfig.hero.description,
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body>
         <Providers>
-          <main className="container mx-auto min-h-screen space-y-4 p-4">
+          <main className="container mx-auto min-h-screen space-y-4 px-4 py-2">
             <Header />
             {children}
           </main>
