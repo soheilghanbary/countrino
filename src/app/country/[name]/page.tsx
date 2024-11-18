@@ -2,6 +2,9 @@ import { BackButton } from '@/components/common/back-button';
 import { ScrollToTop } from '@/components/common/scroll-to-top';
 import { Separator } from '@/components/ui/separator';
 import { Banknote, LanguagesIcon, MapPinHouse, Users2 } from 'lucide-react';
+import { unstable_cache as cache } from 'next/cache';
+
+export const dynamic = 'force-static';
 
 const handleLanguagesToArray = (languages: any) => {
   if (!languages || typeof languages !== 'object') {
@@ -21,18 +24,15 @@ const handleCurrenciesToArray = (currencies: any) => {
   });
 };
 
-export async function getCountry(name: string) {
-  const res = await fetch(`https://restcountries.com/v3.1/name/${name}`, {
-    cache: 'force-cache',
-  });
+const getCountry = cache(async (name: string) => {
+  const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
   const data = await res.json();
   return data[0];
-}
+});
 
 export default async function Page({ params }: { params: { name: string } }) {
   const { name } = await params;
   const country = await getCountry(name);
-
   const currencyArray = handleCurrenciesToArray(country.currencies);
   const languageArray = handleLanguagesToArray(country.languages);
 
