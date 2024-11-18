@@ -4,8 +4,6 @@ import { Separator } from '@/components/ui/separator';
 import { Banknote, LanguagesIcon, MapPinHouse, Users2 } from 'lucide-react';
 import { unstable_cache as cache } from 'next/cache';
 
-export const dynamic = 'force-static';
-
 const handleLanguagesToArray = (languages: any) => {
   if (!languages || typeof languages !== 'object') {
     return [];
