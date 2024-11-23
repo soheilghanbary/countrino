@@ -25,7 +25,9 @@ const handleCurrenciesToArray = (currencies: any) => {
 };
 
 const getCountry = cache(async (name: string) => {
-  const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+  const res = await fetch(
+    `https://restcountries.com/v3.1/name/${name}?fullText=true`,
+  );
   const data = await res.json();
   return data[0];
 });

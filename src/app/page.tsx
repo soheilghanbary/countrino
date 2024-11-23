@@ -1,5 +1,5 @@
 import { BackToTop } from '@/components/common/back-to-top';
-import { CountryList } from '@/components/common/country-list';
+import { CountryList } from '@/components/country/CountryList';
 import { Hero } from '@/components/common/hero';
 import { SearchCountry } from '@/components/common/search-country';
 import { SortCountry } from '@/components/common/sort-country';
